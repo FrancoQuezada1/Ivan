@@ -1,0 +1,20 @@
+<div class="container">
+    <div class="columnas">
+      <div class="input">
+        <span> Escriba el titulo de la pelicula </span><input #tit type="text">
+      </div><br>
+      <div class="input">
+        <span>Año de la pelicula </span><input #year type="text">
+      </div><br>
+      <div class="input">
+        <span>Url de la imagen</span><input #img type="text">
+      </div><br>
+      <select #gen name="genero">
+        <ng-template ngFor let-item [ngForOf]="generos">
+          <option value={{item.value}}>{{item.text}}</option>
+        </ng-template>
+      </select>
+    </div>
+    <button class="button" (click)="Peli(tit.value, year.value, img.value, gen.options[gen.selectedIndex].text)">Añadir</button>
+  </div>
+  
